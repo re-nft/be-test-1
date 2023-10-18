@@ -1,11 +1,22 @@
 # be-test-1
+
 Template for backend take home test #1
 
 ## Pre-Requisites
 
-1/ You will need to have `docker compose` v2: https://docs.docker.com/compose/install/
+1/ You will need to have `docker compose` v2:
+https://docs.docker.com/compose/install/
 
-2/ You will need to have installed `sqd` cli: https://docs.subsquid.io/squid-cli/installation/#0-install-and-setup-squid-cli
+2/ You will need to have installed `sqd` cli:
+https://docs.subsquid.io/squid-cli/installation/#0-install-and-setup-squid-cli
+
+3/ `indexer` folder in this repo is a typescript codebase. We recommend you use
+node v18.6.0. You can use `nvm` to manage node versions. `cd` into this folder
+and `npm` install deps. It's crucial that you use `npm`!
+
+## Repo Overview
+
+- `indexer` - subsquid boilerplate for your indexing needs
 
 ## Development
 
@@ -21,3 +32,8 @@ This will start the following services:
 
 `api` depends on `anvil` and `db`
 
+## Notes
+
+You will have noticed that subsquid is serving indexed data via its very own
+GraphQL API server. Proxying into it from Python will be considered a fail. You
+must write your own Python GraphQL server over postgresql db tables.
