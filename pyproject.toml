@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "be-test-1"
+version = "0.1.0"
+description = ""
+authors = ["Linus T"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
