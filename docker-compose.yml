@@ -1,0 +1,43 @@
+name: 'renft'
+
+version: '3.8'
+
+services:
+  anvil:
+    image: ghcr.io/foundry-rs/foundry
+    restart: always
+    ports:
+      - 8545:8545
+    entrypoint:
+      [
+        'anvil',
+        '--fork-url',
+        $FORK_URL,
+        '--fork-block-number',
+        '4094014',
+        '--fork-chain-id',
+        '11155111',
+        '--host',
+        '0.0.0.0',
+        '--no-rate-limit',
+        '--auto-impersonate',
+        '--steps-tracing',
+      ]
+
+  db:
+    image: postgres:15
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: test
+      POSTGRES_PASSWORD: postgres
+
+  api:
+    build: .
+    depends_on:
+      - anvil
+      - db
+    restart: always
+    ports:
+      - 8000:80
