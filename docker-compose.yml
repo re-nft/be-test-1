@@ -1,4 +1,4 @@
-name: 'renft'
+name: 'renft-test'
 
 version: '3.8'
 
@@ -8,15 +8,17 @@ services:
     restart: always
     ports:
       - 8545:8545
+    # ! once you have set the correct FORK_URL in .env
+    # ! anvil will use it here
     entrypoint:
       [
         'anvil',
         '--fork-url',
         $FORK_URL,
         '--fork-block-number',
-        '4094014',
+        '36825974', # block where contract was deployed
         '--fork-chain-id',
-        '11155111',
+        '137', # polygon mainnet chain id
         '--host',
         '0.0.0.0',
         '--no-rate-limit',
