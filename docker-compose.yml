@@ -3,6 +3,8 @@ name: 'renft-test'
 version: '3.8'
 
 services:
+  # this db is the target for your indexed events
+  # ! do not use squid's db
   db:
     image: postgres:15
     restart: always

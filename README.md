@@ -11,8 +11,9 @@ https://docs.docker.com/compose/install/
 https://docs.subsquid.io/squid-cli/installation/#0-install-and-setup-squid-cli
 
 3/ `indexer` folder in this repo is a typescript codebase. We recommend you use
-node v18.6.0. You can use `nvm` to manage node versions. `cd` into this folder
-and `npm` install deps. It's crucial that you use `npm`!
+node v18.6.0. You can use [`nvm`](https://github.com/nvm-sh/nvm) to manage node
+versions. `cd` into this folder and `npm` install deps. It's crucial that you
+use `npm`!
 
 4/ `poetry` to manage python dependencies. You can install it here:
 https://python-poetry.org/docs/#installation
@@ -37,11 +38,8 @@ To start all the services, simply run:
 
 This will start the following services:
 
-- `anvil`
 - `db`
 - `api`
-
-`api` depends on `anvil` and `db`
 
 ## Notes
 
