@@ -35,12 +35,11 @@ services:
       POSTGRES_DB: test
       POSTGRES_PASSWORD: postgres
 
-  # TODO
-  # api:
-  #   build: .
-  #   depends_on:
-  #     - anvil
-  #     - db
-  #   restart: always
-  #   ports:
-  #     - 8000:80
+  api:
+    build: .
+    depends_on:
+      - anvil
+      - db
+    restart: always
+    ports:
+      - 8000:8000

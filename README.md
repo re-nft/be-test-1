@@ -14,9 +14,20 @@ https://docs.subsquid.io/squid-cli/installation/#0-install-and-setup-squid-cli
 node v18.6.0. You can use `nvm` to manage node versions. `cd` into this folder
 and `npm` install deps. It's crucial that you use `npm`!
 
+4/ `poetry` to manage python dependencies. You can install it here:
+https://python-poetry.org/docs/#installation
+
 ## Repo Overview
 
 - `indexer` - subsquid boilerplate for your indexing needs
+- `api` - your python graphql server boilerplate
+
+To install python dependencies, run `poetry install`. This will create a virtual
+environment in `.venv` in current workspace directory. Now you can run
+`poetry shell` and it will activate this virtual environment for you. Note, you
+will need to use python `^3.11` for this assignment. A neat way to manage
+multiple python versions at the same time is with
+[`pyenv`](https://github.com/pyenv/pyenv).
 
 ## Development
 
