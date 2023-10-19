@@ -14,14 +14,7 @@ export const processor = new EvmBatchProcessor()
         // against the other EVM networks
         // For a full list of supported networks and config options
         // see https://docs.subsquid.io/evm-indexing/
-        archive: lookupArchive('eth-mainnet'),
-
-        // Must be set for RPC ingestion (https://docs.subsquid.io/evm-indexing/evm-processor/)
-        // OR to enable contract state queries (https://docs.subsquid.io/evm-indexing/query-state/)
-        chain: {
-            url: 'https://rpc.ankr.com/eth',
-            rateLimit: 10
-        }
+        archive: lookupArchive('polygon'),
     })
     .setFinalityConfirmation(75)
     .setFields({
